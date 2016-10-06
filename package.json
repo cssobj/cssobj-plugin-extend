@@ -1,7 +1,7 @@
 {
   "name": "cssobj-plugin-extend",
   "version": "1.0.0",
-  "description": "cssobj plugin to extend selector like SCSS or LESS",
+  "description": "cssobj plugin to extend selector to another selector, like @extend in SCSS or $extend in LESS.",
   "main": "src/cssobj-plugin-extend.js",
   "directories": {
     "test": "test"
