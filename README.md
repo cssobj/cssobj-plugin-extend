@@ -19,6 +19,9 @@ var cssobj = require('cssobj')
 var cssobj_plugin_extend = require('cssobj-plugin-extend')
 
 // then consume the cssobj_plugin_extend below
+cssobj(obj, {
+  plugins: [ cssobj_plugin_extend(option) ]
+})
 ```
 
 ## Quick Start
@@ -26,8 +29,7 @@ var cssobj_plugin_extend = require('cssobj-plugin-extend')
 ### **Extend single selector:**
 
 ```javascript
-cssobj(
-{
+var obj = {
   'p': {
     fontSize: '12px'
   },
@@ -35,13 +37,7 @@ cssobj(
     $extend: 'p',
     color: 'red'
   }
-},
-{
-  plugins: [
-    cssobj_plugin_extend()
-  ]
 }
-)
 ```
 
 Result css:
@@ -55,8 +51,7 @@ div { color: red; }
 
 
 ```javascript
-cssobj(
-{
+var obj = {
   '.blue': {
     color: 'blue'
   },
@@ -67,13 +62,7 @@ cssobj(
     $extend: ['p', '.blue'],
     color: 'red'
   }
-},
-{
-  plugins: [
-    cssobj_plugin_extend()
-  ]
 }
-)
 ```
 
 Result css:
@@ -87,8 +76,7 @@ div { color: red; }
 ### **Extend with regexp:**
 
 ```javascript
-cssobj(
-{
+var obj = {
   // clearfix hack
   '.clearfix': {
     '&:before, &:after': {
@@ -106,13 +94,7 @@ cssobj(
     $extend: /\.clearfix/,
     color: 'red'
   }
-},
-{
-  plugins: [
-    cssobj_plugin_extend()
-  ]
 }
-)
 ```
 
 Result css:
@@ -130,6 +112,27 @@ Result css:
 }
 div { color: red; }
 ```
+
+## API
+
+#### cssobj_plugin_extend(option)
+
+return function as cssobj plugin.
+
+##### option.keyName
+
+Default value: **$extend**, which means the intended key checking by this plugin is `$extend`, you can set it to any value start with `'$'`.
+
+```javascript
+var obj = {
+  p: {color: 'red'},
+  div: {$ext: 'p'}
+}
+
+// use $ext as keyName
+cssobj(obj, {plugins: [cssobj_plugin_extend({keyName: '$ext'})]})
+```
+
 
 ## Requirement
 
