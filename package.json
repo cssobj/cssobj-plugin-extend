@@ -1,0 +1,36 @@
+{
+  "name": "cssobj-plugin-extend",
+  "version": "1.0.0",
+  "description": "cssobj plugin to extend selector like SCSS or LESS",
+  "main": "src/cssobj-plugin-extend.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "pretest": "rollup -c",
+    "test": "istanbul cover _mocha",
+    "build": "rollup -c && uglifyjs dist/cssobj-plugin-extend.iife.js -cm -o dist/cssobj-plugin-extend.min.js",
+    "make": "gulp bump && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/futurist/cssobj-plugin-extend.git"
+  },
+  "keywords": [
+    "cssobj",
+    "plugin",
+    "cssobj",
+    "extend"
+  ],
+  "author": "James Yang <jamesyang999@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/futurist/cssobj-plugin-extend/issues"
+  },
+  "homepage": "https://github.com/futurist/cssobj-plugin-extend#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "cssobj-core": "github:cssobj/cssobj-core#v0.5.5",
+    "cssobj-plugin-gencss": "github:cssobj/cssobj-plugin-gencss"
+  }
+}
