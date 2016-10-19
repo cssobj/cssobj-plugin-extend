@@ -1,6 +1,6 @@
 # cssobj-plugin-extend
 
-[![Build Status](https://travis-ci.org/cssobj/cssobj-plugin-extend.svg?branch=master)](https://travis-ci.org/cssobj/cssobj-plugin-extend)
+[![Join the chat at https://gitter.im/css-in-js/cssobj](https://badges.gitter.im/css-in-js/cssobj.svg)](https://gitter.im/css-in-js/cssobj) [![Build Status](https://travis-ci.org/cssobj/cssobj-plugin-extend.svg?branch=master)](https://travis-ci.org/cssobj/cssobj-plugin-extend)
 
 [cssobj](https://github.com/cssobj/cssobj) plugin to extend selector to another selector, like @extend in SCSS or $extend in LESS.
 
